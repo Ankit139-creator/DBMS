@@ -4,34 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Canteen Review</title>
+    <title>Login - Canteen Review System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div
-        style="max-width: 400px; margin: 80px auto; padding: 25px; border: 1px solid #ddd; border-radius: 8px; font-family: Arial, sans-serif; box-shadow: 0px 4px 10px rgba(0,0,0,0.05);">
-        <h2 style="text-align: center; color: #e67e22; margin-bottom: 20px;">Login to CanteenReview</h2>
+    <nav class="navbar">
+        <div class="logo">🍽️ Canteen<span>Review</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html" class="active">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </nav>
 
-        <form method="POST" action="api/login.php">
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Email Address</label>
-                <input type="email" name="email" placeholder="Enter your email" required
-                    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-            </div>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <h2>🔐 Login</h2>
+            <p class="subtitle">Welcome back, student!</p>
 
-            <div style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Password</label>
-                <input type="password" name="password" placeholder="Enter your password" required
-                    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-            </div>
+            <form method="POST" action="api/login.php" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Login</button>
+            </form>
 
-            <button type="submit"
-                style="width: 100%; padding: 12px; background-color: #e67e22; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer;">Sign
-                In</button>
-        </form>
-        <p style="text-align: center; margin-top: 15px; font-size: 14px;">Don't have an account? <a href="register.html"
-                style="color: #e67e22; text-decoration: none; font-weight: bold;">Register here</a></p>
+            <p class="switch-link">Don't have an account? <a href="register.html">Register here</a></p>
+
+            <hr style="margin: 20px 0; border: 1px solid #eee;">
+            <p class="switch-link"><a href="api/admin.php">🛡️ Admin Login</a></p>
+        </div>
     </div>
 </body>
 

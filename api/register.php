@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'] ?? '';
     $confirm = $_POST['confirm_password'] ?? '';
 
-    // Validation
+    
     if (empty($name) || empty($email) || empty($password) || empty($confirm)) {
         $error = "All fields are required!";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($password !== $confirm) {
         $error = "Passwords do not match!";
     } else {
-        // Check if email already exists
+       
         $check = mysqli_prepare($conn, "SELECT student_id FROM students WHERE email = ?");
         mysqli_stmt_bind_param($check, "s", $email);
         mysqli_stmt_execute($check);
@@ -34,13 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_stmt_num_rows($check) > 0) {
             $error = "Email already registered! Please login.";
         } else {
-            // Hash password and insert
+            
             $hashed = password_hash($password, PASSWORD_DEFAULT);
             $stmt = mysqli_prepare($conn, "INSERT INTO students (name, email, password) VALUES (?, ?, ?)");
             mysqli_stmt_bind_param($stmt, "sss", $name, $email, $hashed);
 
             if (mysqli_stmt_execute($stmt)) {
-                // Log the operation
+                
                 log_db_operation("INSERT", "New student registered: $name ($email)");
                 $success = "Registration successful! You can now login.";
             } else {
