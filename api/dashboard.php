@@ -159,7 +159,7 @@ function render_stars($rating) {
         <!-- Search Bar -->
         <div class="card" id="food-section">
             <h2>🔍 Search Food Items</h2>
-            <form method="GET" action="dashboard.php" class="search-bar">
+            <form method="GET" action="api/dashboard.php" class="search-bar">
                 <input type="text" name="search" placeholder="Search for a food item..."
                        value="<?php echo htmlspecialchars($search); ?>">
                 <button type="submit" class="btn btn-primary">Search</button>

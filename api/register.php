@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="alert alert-success"><?php echo $success; ?></div>
             <?php endif; ?>
 
-            <form method="POST" action="register.php" id="registerForm">
+            <form action="/api/register.php" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name"

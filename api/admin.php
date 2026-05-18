@@ -144,7 +144,7 @@ function render_stars_admin($rating) {
                         <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
                     <?php endif; ?>
 
-                    <form method="POST" action="admin.php">
+                    <form method="POST" action="api/admin.php">
                         <div class="form-group">
                             <label for="email">Admin Email</label>
                             <input type="email" id="email" name="email" placeholder="admin@canteen.com" required>
