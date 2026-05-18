@@ -5,10 +5,12 @@
 // =====================================================
 
 // Database configuration
-$host = "localhost";       // Server name (localhost for XAMPP)
-$username = "root";        // Default XAMPP MySQL username
-$password = "12345678";    // MySQL root password
-$database = "canteen_review_system";  // Our database name
+$host = "bschams1l2rgancp72ti-mysql.services.clever-cloud.com";       // Server name (localhost for XAMPP)
+$username = "uvgowmuzbwisjawa";        // Default XAMPP MySQL username
+$password = "v7iiD24pNcsZh0pFAfqp";    // MySQL root password
+$database = "bschams1l2rgancp72ti";  // Our database name
+$port = 3306;
+
 
 // Create connection using MySQLi
 $conn = mysqli_connect($host, $username, $password, $database);

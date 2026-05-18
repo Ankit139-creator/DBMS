@@ -3,11 +3,6 @@
 -- DBMS Mini Project
 -- =====================================================
 
--- Step 1: Create the database
-CREATE DATABASE IF NOT EXISTS canteen_review_system;
-
--- Step 2: Select the database
-USE canteen_review_system;
 
 -- =====================================================
 -- Step 3: Create Tables
